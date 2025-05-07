@@ -84,6 +84,7 @@ public class UserServiceImpl implements UserService {
 
         user.getSubscriptions().add(subscription);
         userRepository.save(user);
+        log.info("User with id '{}' subscribed to '{}'.", userId, subscriptionId);
     }
 
     @Override
@@ -102,6 +103,7 @@ public class UserServiceImpl implements UserService {
 
         user.getSubscriptions().remove(subscription);
         userRepository.save(user);
+        log.info("User with id '{}' unsubscribed from '{}'.", userId, subscriptionId);
     }
 
     private User findUser(Long userId) {
