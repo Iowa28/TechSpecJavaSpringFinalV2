@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import ru.aminovniaz.techspecjavaspringfinalv2.dto.UserDto;
 import ru.aminovniaz.techspecjavaspringfinalv2.service.UserService;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 public class UserController {
@@ -30,5 +32,10 @@ public class UserController {
     @DeleteMapping("users/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
+    }
+
+    @GetMapping("users")
+    public List<UserDto> getUsers() {
+        return userService.getUsers();
     }
 }

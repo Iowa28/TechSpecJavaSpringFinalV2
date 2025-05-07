@@ -10,8 +10,22 @@ spring:
       auto-commit: false
   jpa:
     show-sql: true
+    open-in-view: true
     hibernate:
       ddl-auto: update
 
+
 server:
   port: 8080
+
+logging:
+  level:
+    root: info
+    org:
+      springframework:
+        web: warn
+      hibernate: error
+  file:
+    name: 'logs/log_${current_date}.log'
+  pattern:
+    file: '%-5p %m%n'
