@@ -18,6 +18,10 @@
 ## Адреса для доступа к API
 
 $${\color{red}Color \space your \space \color{green}.md \space file \space \color{blue}in \space Github}$$<br/>
+$${\color{red}DELETE}$$<br/>
+$${\color{green}GET}$$<br/>
+$${\color{blue}POST}$$<br/>
+$${\color{cyan}PUT}$$<br/>
 <span style="color:blue;">POST</span> */users* - создать пользователя <br/>
 <span style="color:green;">GET</span> */users/{id}* - получить информацию о пользователе <br/>
 <span style="color:cyan;">PUT</span> */users/{id}* - обновить пользователя <br/>
