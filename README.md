@@ -17,20 +17,18 @@
 
 ## Адреса для доступа к API
 
-${{\color{red}POST}}$ /users - создать пользователя
+$${\color{blue}POST}$$ */users* - создать пользователя <br/>
+$${\color{green}GET}$$ */users/{id}* - получить информацию о пользователе <br/>
+$${\color{cyan}PUT}$$ */users/{id}* - обновить пользователя <br/>
+$${\color{red}DELETE}$$ */users/{id}* - удалить пользователя <br/>
+$${\color{green}GET}$$ */users* - получить список всех пользователей <br/>
 
-[//]: # (POST */users* - создать пользователя<br/> )
-$${\color{green}GET}$$<br/> */users/{id}* - получить информацию о пользователе <br/>
-$${\color{cyan}PUT}$$<br/> */users/{id}* - обновить пользователя <br/>
-$${\color{red}DELETE}$$<br/> */users/{id}* - удалить пользователя <br/>
-$${\color{green}GET}$$<br/> */users* - получить список всех пользователей <br/>
+$${\color{blue}POST}$$ */users/{id}/subscriptions* - добавить подписку <br/>
+$${\color{green}GET}$$ */users/{id}/subscriptions* - получить подписки пользователя <br/>
+$${\color{red}DELETE}$$ */users/{id}/subscriptions/{sub_id}* - удалить подписку <br/>
 
-$${\color{blue}POST}$$<br/> */users/{id}/subscriptions* - добавить подписку <br/>
-$${\color{green}GET}$$<br/> */users/{id}/subscriptions* - получить подписки пользователя <br/>
-$${\color{red}DELETE}$$<br/> */users/{id}/subscriptions/{sub_id}* - удалить подписку <br/>
-
-$${\color{blue}POST}$$<br/> */subscriptions* - создать подписку <br/>
-$${\color{green}GET}$$<br/> */subscriptions/{id}* - получить информацию о подписке <br/>
-$${\color{cyan}PUT}$$<br/> */subscriptions/{id}* - обновить подписку <br/>
-$${\color{red}DELETE}$$<br/> */subscriptions/{id}* - удалить подписку <br/>
-$${\color{green}GET}$$<br/> */subscriptions/top* - получить ТОП-3 популярных подписок <br/>
+$${\color{blue}POST}$$ */subscriptions* - создать подписку <br/>
+$${\color{green}GET}$$ */subscriptions/{id}* - получить информацию о подписке <br/>
+$${\color{cyan}PUT}$$ */subscriptions/{id}* - обновить подписку <br/>
+$${\color{red}DELETE}$$ */subscriptions/{id}* - удалить подписку <br/>
+$${\color{green}GET}$$ */subscriptions/top* - получить ТОП-3 популярных подписок <br/>
