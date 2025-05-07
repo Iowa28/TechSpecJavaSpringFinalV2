@@ -1,18 +1,23 @@
 package ru.aminovniaz.techspecjavaspringfinalv2.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ru.aminovniaz.techspecjavaspringfinalv2.dto.SubscriptionDto;
 import ru.aminovniaz.techspecjavaspringfinalv2.dto.UserDto;
 import ru.aminovniaz.techspecjavaspringfinalv2.exception.NotFoundException;
+import ru.aminovniaz.techspecjavaspringfinalv2.mapper.SubscriptionMapper;
 import ru.aminovniaz.techspecjavaspringfinalv2.mapper.UserMapper;
+import ru.aminovniaz.techspecjavaspringfinalv2.model.Subscription;
 import ru.aminovniaz.techspecjavaspringfinalv2.model.User;
 import ru.aminovniaz.techspecjavaspringfinalv2.repository.UserRepository;
 
+import java.text.MessageFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
-@Log4j2
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -20,6 +25,10 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     private final UserMapper userMapper;
+
+    private final SubscriptionMapper subscriptionMapper;
+
+    private final SubscriptionService subscriptionService;
 
     @Override
     public void createUser(UserDto userDto) {
@@ -59,6 +68,40 @@ public class UserServiceImpl implements UserService {
     public List<UserDto> getUsers() {
         List<User> users = userRepository.findByFinishTimeIsNull();
         return userMapper.usersToUserDtos(users);
+    }
+
+    @Override
+    public void addSubscriptionToUser(Long subscriptionId, Long userId) {
+        if (Objects.isNull(subscriptionId)) {
+            throw new IllegalArgumentException("Subscription id cannot be null.");
+        }
+
+        User user = findUser(userId);
+        Subscription subscription = subscriptionService.findSubscription(subscriptionId);
+        if (user.getSubscriptions().contains(subscription)) {
+            throw new NotFoundException(MessageFormat.format("User already has subscription {0}.", subscriptionId));
+        }
+
+        user.getSubscriptions().add(subscription);
+        userRepository.save(user);
+    }
+
+    @Override
+    public List<SubscriptionDto> getUserSubscriptions(Long userId) {
+        User user = findUser(userId);
+        return subscriptionMapper.subscriptionsToDtos(user.getSubscriptions());
+    }
+
+    @Override
+    public void deleteSubscriptionFromUser(Long subscriptionId, Long userId) {
+        User user = findUser(userId);
+        Subscription subscription = subscriptionService.findSubscription(subscriptionId);
+        if (!user.getSubscriptions().contains(subscription)) {
+            throw new NotFoundException(MessageFormat.format("User doesn''t has subscription {0}.", subscriptionId));
+        }
+
+        user.getSubscriptions().remove(subscription);
+        userRepository.save(user);
     }
 
     private User findUser(Long userId) {

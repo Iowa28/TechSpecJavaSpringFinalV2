@@ -3,6 +3,7 @@ package ru.aminovniaz.techspecjavaspringfinalv2.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.aminovniaz.techspecjavaspringfinalv2.dto.SubscriptionDto;
 import ru.aminovniaz.techspecjavaspringfinalv2.dto.UserDto;
 import ru.aminovniaz.techspecjavaspringfinalv2.service.UserService;
 
@@ -37,5 +38,20 @@ public class UserController {
     @GetMapping("users")
     public List<UserDto> getUsers() {
         return userService.getUsers();
+    }
+
+    @PostMapping("users/{id}/subscriptions")
+    public void addSubscriptionToUser(@PathVariable Long id, @RequestBody SubscriptionDto subscriptionDto) {
+        userService.addSubscriptionToUser(subscriptionDto.getId(), id);
+    }
+
+    @GetMapping("users/{id}/subscriptions")
+    public List<SubscriptionDto> getUserSubscriptions(@PathVariable Long id) {
+        return userService.getUserSubscriptions(id);
+    }
+
+    @DeleteMapping("users/{id}/subscriptions/{subId}")
+    public void deleteSubscriptionFromUser(@PathVariable Long id, @PathVariable Long subId) {
+        userService.deleteSubscriptionFromUser(subId, id);
     }
 }

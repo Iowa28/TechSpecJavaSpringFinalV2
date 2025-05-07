@@ -26,12 +26,12 @@ public class ExceptionController {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorMessage> validationException(MethodArgumentNotValidException exception) {
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder message = new StringBuilder();
         for (final FieldError error : exception.getBindingResult().getFieldErrors()) {
-            stringBuilder.append(error.getDefaultMessage()).append(". ");
+            message.append(error.getDefaultMessage()).append(". ");
         }
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorMessage(stringBuilder.toString()));
+                .body(new ErrorMessage(message.toString()));
     }
 }

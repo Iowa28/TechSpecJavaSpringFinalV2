@@ -7,7 +7,7 @@ import ru.aminovniaz.techspecjavaspringfinalv2.model.Subscription;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface SubscriptionDtos {
+public interface SubscriptionMapper {
 
     SubscriptionDto subscriptionToDto(Subscription subscription);
 

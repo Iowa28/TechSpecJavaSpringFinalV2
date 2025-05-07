@@ -1,8 +1,7 @@
 package ru.aminovniaz.techspecjavaspringfinalv2.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -10,6 +9,9 @@ import java.util.Date;
 @Table(name = "SUBSCRIPTIONS")
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Subscription {
 
     @Id
