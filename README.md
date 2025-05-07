@@ -17,23 +17,18 @@
 
 ## Адреса для доступа к API
 
-$${\color{red}Color \space your \space \color{green}.md \space file \space \color{blue}in \space Github}$$<br/>
-$${\color{red}DELETE}$$<br/>
-$${\color{green}GET}$$<br/>
-$${\color{blue}POST}$$<br/>
-$${\color{cyan}PUT}$$<br/>
-<span style="color:blue;">POST</span> */users* - создать пользователя <br/>
-<span style="color:green;">GET</span> */users/{id}* - получить информацию о пользователе <br/>
-<span style="color:cyan;">PUT</span> */users/{id}* - обновить пользователя <br/>
-<span style="color:red;">DELETE</span> */users/{id}* - удалить пользователя <br/>
-<span style="color:green;">GET</span> */users* - получить список всех пользователей <br/>
+$${\color{blue}POST}$$<br/> */users* - создать пользователя <br/>
+$${\color{green}GET}$$<br/> */users/{id}* - получить информацию о пользователе <br/>
+$${\color{cyan}PUT}$$<br/> */users/{id}* - обновить пользователя <br/>
+$${\color{red}DELETE}$$<br/> */users/{id}* - удалить пользователя <br/>
+$${\color{green}GET}$$<br/> */users* - получить список всех пользователей <br/>
 
-<span style="color:blue;">POST</span> */users/{id}/subscriptions* - добавить подписку <br/>
-<span style="color:green;">GET</span> */users/{id}/subscriptions* - получить подписки пользователя <br/>
-<span style="color:red;">DELETE</span> */users/{id}/subscriptions/{sub_id}* - удалить подписку <br/>
+$${\color{blue}POST}$$<br/> */users/{id}/subscriptions* - добавить подписку <br/>
+$${\color{green}GET}$$<br/> */users/{id}/subscriptions* - получить подписки пользователя <br/>
+$${\color{red}DELETE}$$<br/> */users/{id}/subscriptions/{sub_id}* - удалить подписку <br/>
 
-<span style="color:blue;">POST</span> */subscriptions* - создать подписку <br/>
-<span style="color:green;">GET</span> */subscriptions/{id}* - получить информацию о подписке <br/>
-<span style="color:cyan;">PUT</span> */subscriptions/{id}* - обновить подписку <br/>
-<span style="color:red;">DELETE</span> */subscriptions/{id}* - удалить подписку <br/>
-<span style="color:green;">GET</span> */subscriptions/top* - получить ТОП-3 популярных подписок <br/>
+$${\color{blue}POST}$$<br/> */subscriptions* - создать подписку <br/>
+$${\color{green}GET}$$<br/> */subscriptions/{id}* - получить информацию о подписке <br/>
+$${\color{cyan}PUT}$$<br/> */subscriptions/{id}* - обновить подписку <br/>
+$${\color{red}DELETE}$$<br/> */subscriptions/{id}* - удалить подписку <br/>
+$${\color{green}GET}$$<br/> */subscriptions/top* - получить ТОП-3 популярных подписок <br/>
