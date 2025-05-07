@@ -17,13 +17,7 @@
 
 ## Адреса для доступа к API
 
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
+$${\color{red}Color \space your \space \color{green}.md \space file \space \color{blue}in \space Github}$$<br/>
 <span style="color:blue;">POST</span> */users* - создать пользователя <br/>
 <span style="color:green;">GET</span> */users/{id}* - получить информацию о пользователе <br/>
 <span style="color:cyan;">PUT</span> */users/{id}* - обновить пользователя <br/>
