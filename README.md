@@ -17,7 +17,9 @@
 
 ## Адреса для доступа к API
 
-$${\color{blue}POST} */users* - создать пользователя$$<br/> 
+${{\color{red}POST}}\ /users -\ создать\ пользователя$
+
+[//]: # (POST */users* - создать пользователя<br/> )
 $${\color{green}GET}$$<br/> */users/{id}* - получить информацию о пользователе <br/>
 $${\color{cyan}PUT}$$<br/> */users/{id}* - обновить пользователя <br/>
 $${\color{red}DELETE}$$<br/> */users/{id}* - удалить пользователя <br/>
