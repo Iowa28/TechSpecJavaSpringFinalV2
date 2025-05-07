@@ -11,5 +11,5 @@ public interface SubscriptionDtos {
 
     SubscriptionDto subscriptionToDto(Subscription subscription);
 
-    List<SubscriptionDto> subscriptionDtosToDtos(List<Subscription> subscriptions);
+    List<SubscriptionDto> subscriptionsToDtos(List<Subscription> subscriptions);
 }

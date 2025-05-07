@@ -15,13 +15,13 @@ public class UserDto {
 
     private Long id;
 
-    @Size(min = 5, max = 36, message = "Имя пользователя должно содержать от 5 до 36 символов")
-    @NotBlank(message = "Имя пользователя не может быть пустым")
+    @Size(min = 5, max = 36, message = "Username must contain from 5 to 36 characters")
+    @NotBlank(message = "Username cannot be empty")
     private String username;
 
-    @Size(min = 5, max = 36, message = "Адрес электронной почты должен содержать от 5 до 36 символов")
-    @NotBlank(message = "Адрес электронной почты не может быть пустым")
-    @Email(message = "Адрес электронной должен быть в формате user@example.com")
+    @Size(min = 5, max = 36, message = "Email must contain from 5 to 36 characters")
+    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Email must be in format user@example.com")
     private String email;
 
     private List<SubscriptionDto> subscriptions;

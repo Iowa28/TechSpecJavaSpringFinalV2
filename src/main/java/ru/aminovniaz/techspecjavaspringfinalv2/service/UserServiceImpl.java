@@ -3,14 +3,12 @@ package ru.aminovniaz.techspecjavaspringfinalv2.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.aminovniaz.techspecjavaspringfinalv2.dto.UserDto;
-import ru.aminovniaz.techspecjavaspringfinalv2.exception.EntityExistsException;
 import ru.aminovniaz.techspecjavaspringfinalv2.exception.NotFoundException;
 import ru.aminovniaz.techspecjavaspringfinalv2.mapper.UserMapper;
 import ru.aminovniaz.techspecjavaspringfinalv2.model.User;
 import ru.aminovniaz.techspecjavaspringfinalv2.repository.UserRepository;
 
 import java.util.Date;
-import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -22,11 +20,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(UserDto userDto) {
-        if (userRepository.existsById(userDto.getId())) {
-            throw new EntityExistsException("User already exists.");
-        }
-
         User user = User.builder()
+                //.id(userDto.getId())
                 .username(userDto.getUsername())
                 .email(userDto.getEmail())
                 .createTime(new Date())
@@ -35,12 +30,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUser(UserDto userDto) {
-        if (Objects.isNull(userDto.getId())) {
-            throw new EntityExistsException("User id is required.");
-        }
-
-        User user = findUser(userDto.getId());
+    public void updateUser(UserDto userDto, Long userId) {
+        User user = findUser(userId);
         user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
         userRepository.save(user);

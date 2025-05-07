@@ -6,7 +6,7 @@ public interface UserService {
 
     void createUser(UserDto userDto);
 
-    void updateUser(UserDto userDto);
+    void updateUser(UserDto userDto, Long userId);
 
     UserDto getUser(Long userId);
 
