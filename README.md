@@ -2,7 +2,7 @@
 
 ## Локальный запуск
 Локальный запуск через docker-compose:
-1. Сборка jar-файла: <br/>*mvn clean package -DskipTests*
+1. Сборка jar-файла: <br/>*mvn clean package*
 2. Создание docker-образа: <br/>*docker build -t app .*
 3. Запуск: <br/>*docker-compose up*
 
